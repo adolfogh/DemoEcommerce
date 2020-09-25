@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "agh.ecommerce.Util.Common", "agh.ecommerce.util.common\agh.ecommerce.Util.Common.csproj", "{7E21E9CA-3C7F-401F-8D8E-82022DC10A23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "agh.ecommerce.Util.Common", "agh.ecommerce.util.common\agh.ecommerce.Util.Common.csproj", "{7E21E9CA-3C7F-401F-8D8E-82022DC10A23}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilidades", "Utilidades", "{5D0A764E-5E3E-4EEE-ABAE-1E5929B11CF4}"
 EndProject
@@ -15,13 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicacion", "Aplicacion", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servicio", "Servicio", "{A6C55D50-F6CD-4139-9EE7-F3F2AF7714B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "agh.ecommerce.Infraestructura.Data", "agh.ecommerce.infraestructura.data\agh.ecommerce.Infraestructura.Data.csproj", "{B462DD6A-4BBB-459E-998E-0CFE803B8F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "agh.ecommerce.Infraestructura.Data", "agh.ecommerce.infraestructura.data\agh.ecommerce.Infraestructura.Data.csproj", "{B462DD6A-4BBB-459E-998E-0CFE803B8F0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "agh.ecommerce.Infraestrucutra.Interface", "agh.ecommerce.infraestrucutra.Interface\agh.ecommerce.Infraestrucutra.Interface.csproj", "{F0830966-AFFD-42A3-A280-1FD74F57E184}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "agh.ecommerce.Infraestrucutra.Interface", "agh.ecommerce.infraestrucutra.Interface\agh.ecommerce.Infraestrucutra.Interface.csproj", "{F0830966-AFFD-42A3-A280-1FD74F57E184}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "agh.ecommerce.Domain.Entity", "agh.ecommerce.Domain.Entity\agh.ecommerce.Domain.Entity.csproj", "{E89E915F-CD0A-4545-8374-EB005BC95E76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "agh.ecommerce.Domain.Entity", "agh.ecommerce.Domain.Entity\agh.ecommerce.Domain.Entity.csproj", "{E89E915F-CD0A-4545-8374-EB005BC95E76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "agh.ecommerce.Infraestrucutra.Repository", "agh.ecommerce.Infraestrucutra.Repository\agh.ecommerce.Infraestrucutra.Repository.csproj", "{52DAAED0-9400-44B9-896C-BAB21E2B2EE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "agh.ecommerce.Infraestrucutra.Repository", "agh.ecommerce.Infraestrucutra.Repository\agh.ecommerce.Infraestrucutra.Repository.csproj", "{52DAAED0-9400-44B9-896C-BAB21E2B2EE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "agh.ecommerce.Domain.Interface", "agh.ecommerce.Domain.Interface\agh.ecommerce.Domain.Interface.csproj", "{236A6EA1-B556-40C6-B92B-E7E8F279BBEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{52DAAED0-9400-44B9-896C-BAB21E2B2EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52DAAED0-9400-44B9-896C-BAB21E2B2EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52DAAED0-9400-44B9-896C-BAB21E2B2EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{236A6EA1-B556-40C6-B92B-E7E8F279BBEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{236A6EA1-B556-40C6-B92B-E7E8F279BBEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{236A6EA1-B556-40C6-B92B-E7E8F279BBEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{236A6EA1-B556-40C6-B92B-E7E8F279BBEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{F0830966-AFFD-42A3-A280-1FD74F57E184} = {6C6BB931-E8F5-470D-A7F3-0C93D9EBA00D}
 		{E89E915F-CD0A-4545-8374-EB005BC95E76} = {721CC9C4-0F57-4B38-A692-7B94AEBD989A}
 		{52DAAED0-9400-44B9-896C-BAB21E2B2EE2} = {6C6BB931-E8F5-470D-A7F3-0C93D9EBA00D}
+		{236A6EA1-B556-40C6-B92B-E7E8F279BBEC} = {721CC9C4-0F57-4B38-A692-7B94AEBD989A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF42C860-83C8-4D13-B9FC-C98057776EC0}

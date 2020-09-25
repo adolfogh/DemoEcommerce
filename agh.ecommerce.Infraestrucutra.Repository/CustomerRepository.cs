@@ -47,50 +47,160 @@ namespace agh.ecommerce.Infraestrucutra.Repository
 
         public bool Update(Customers customer)
         {
-            throw new NotImplementedException();
+            using (var connection = _connectionFactory.GetConnection)
+            {
+                var query = "CustomerUpdate";
+                var parameters = new DynamicParameters();
+                parameters.Add("CustomerID", customer.CustomerId);
+                parameters.Add("CompanyName", customer.CustomerId);
+                parameters.Add("ConctacName", customer.CustomerId);
+                parameters.Add("ContactTitle", customer.CustomerId);
+                parameters.Add("Address", customer.CustomerId);
+                parameters.Add("City", customer.CustomerId);
+                parameters.Add("Region", customer.CustomerId);
+                parameters.Add("PostalCode", customer.CustomerId);
+                parameters.Add("Country", customer.CustomerId);
+                parameters.Add("Phone", customer.CustomerId);
+                parameters.Add("Fax", customer.CustomerId);
+
+                var result = connection.Execute(query, param: parameters, commandType: CommandType.StoredProcedure);
+                return result > 0;
+
+            }
         }
 
         public bool Delete(string customerId)
         {
-            throw new NotImplementedException();
+            using (var connection = _connectionFactory.GetConnection)
+            {
+                var query = "CustomerDelete";
+                var parameters = new DynamicParameters();
+                parameters.Add("CustomerID", customerId);
+
+
+                var result = connection.Execute(query, param: parameters, commandType: CommandType.StoredProcedure);
+                return result > 0;
+
+            }
         }
 
         public Customers Get(string customerId)
         {
-            throw new NotImplementedException();
+            using (var connection = _connectionFactory.GetConnection)
+            {
+                var query = "CustomerGetByID";
+                var parameters = new DynamicParameters();
+                parameters.Add("CustomerID", customerId);
+
+                var customer = connection.QuerySingle<Customers>(query, param: parameters, commandType: CommandType.StoredProcedure);
+                return customer;
+
+            }
         }
 
         public IEnumerable<Customers> GetAll()
         {
-            throw new NotImplementedException();
+            using (var connection = _connectionFactory.GetConnection)
+            {
+                var query = "CustomerList";
+
+                var customers = connection.Query<Customers>(query, commandType: CommandType.StoredProcedure);
+                return customers;
+
+            }
         }
 
         #endregion
 
         #region "Métodos Asíncronos"
 
-        public Task<bool> InsertAsync(Customers customer)
+        public async Task<bool> InsertAsync(Customers customer)
         {
-            throw new NotImplementedException();
+            using (var connection = _connectionFactory.GetConnection)
+            {
+                var query = "CustomerInsert";
+                var parameters = new DynamicParameters();
+                parameters.Add("CustomerID", customer.CustomerId);
+                parameters.Add("CompanyName", customer.CustomerId);
+                parameters.Add("ConctacName", customer.CustomerId);
+                parameters.Add("ContactTitle", customer.CustomerId);
+                parameters.Add("Address", customer.CustomerId);
+                parameters.Add("City", customer.CustomerId);
+                parameters.Add("Region", customer.CustomerId);
+                parameters.Add("PostalCode", customer.CustomerId);
+                parameters.Add("Country", customer.CustomerId);
+                parameters.Add("Phone", customer.CustomerId);
+                parameters.Add("Fax", customer.CustomerId);
+
+                var result = await connection.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
+                return result > 0;
+
+            }
         }
 
-        public Task<bool> UpdateAsync(Customers customer)
+        public async Task<bool> UpdateAsync(Customers customer)
         {
-            throw new NotImplementedException();
+            using (var connection = _connectionFactory.GetConnection)
+            {
+                var query = "CustomerUpdate";
+                var parameters = new DynamicParameters();
+                parameters.Add("CustomerID", customer.CustomerId);
+                parameters.Add("CompanyName", customer.CustomerId);
+                parameters.Add("ConctacName", customer.CustomerId);
+                parameters.Add("ContactTitle", customer.CustomerId);
+                parameters.Add("Address", customer.CustomerId);
+                parameters.Add("City", customer.CustomerId);
+                parameters.Add("Region", customer.CustomerId);
+                parameters.Add("PostalCode", customer.CustomerId);
+                parameters.Add("Country", customer.CustomerId);
+                parameters.Add("Phone", customer.CustomerId);
+                parameters.Add("Fax", customer.CustomerId);
+
+                var result = await connection.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
+                return result > 0;
+
+            }
         }
 
-        public Task<bool> DeleteAsync(string customerId)
+        public async Task<bool> DeleteAsync(string customerId)
         {
-            throw new NotImplementedException();
+            using (var connection = _connectionFactory.GetConnection)
+            {
+                var query = "CustomerDelete";
+                var parameters = new DynamicParameters();
+                parameters.Add("CustomerID", customerId);
+
+
+                var result = await connection.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
+                return result > 0;
+
+            }
         }
 
-        public Task<Customers> GetAsync(string customerId)
+        public async Task<Customers> GetAsync(string customerId)
         {
-            throw new NotImplementedException();
+            using (var connection = _connectionFactory.GetConnection)
+            {
+                var query = "CustomerGetByID";
+                var parameters = new DynamicParameters();
+                parameters.Add("CustomerID", customerId);
+
+                var customer = await connection.QuerySingleAsync<Customers>(query, param: parameters, commandType: CommandType.StoredProcedure);
+                return customer;
+
+            }
         }
-        public Task<IEnumerable<Customers>> GetAllAsync()
+
+        public async Task<IEnumerable<Customers>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            using (var connection = _connectionFactory.GetConnection)
+            {
+                var query = "CustomerList";
+
+                var customers = await connection.QueryAsync<Customers>(query, commandType: CommandType.StoredProcedure);
+                return customers;
+
+            }
         }
 
         #endregion

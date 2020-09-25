@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using agh.ecommerce.util.common;
+using agh.ecommerce.Util.Common;
 using Microsoft.Extensions.Configuration;
 
 namespace agh.ecommerce.Infraestructura.Data
