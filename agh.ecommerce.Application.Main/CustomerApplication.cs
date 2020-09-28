@@ -93,12 +93,46 @@ namespace agh.ecommerce.Application.Main
 
         public Response<CustomersDTO> Get(string customerId)
         {
-            throw new System.NotImplementedException();
+            var response = new Response<CustomersDTO>();
+            try
+            {
+                var customer = _customerDomain.Get(customerId);
+                response.Data = _mapper.Map<CustomersDTO>(customer);
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa.";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
+
+            return response;
         }
 
         public Response<IEnumerable<CustomersDTO>> GetAll()
         {
-            throw new System.NotImplementedException();
+            var response = new Response<IEnumerable<CustomersDTO>>();
+            try
+            {
+                var customers = _customerDomain.GetAll();
+                response.Data = _mapper.Map<IEnumerable<CustomersDTO>>(customers);
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa.";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
+
+            return response;
         }
 
         #endregion
@@ -106,31 +140,115 @@ namespace agh.ecommerce.Application.Main
 
         #region Asíncronos
 
-        public Task<Response<bool>> InsertAsync(CustomersDTO customer)
+        public async Task<Response<bool>> InsertAsync(CustomersDTO customerDto)
         {
-            throw new System.NotImplementedException();
+            var response = new Response<bool>();
+            try
+            {
+                var customer = _mapper.Map<Customers>(customerDto);
+                response.Data = await _customerDomain.InsertAsync(customer);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Registro Exitoso.";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
+
+            return response;
         }
 
-        public Task<Response<bool>> UpdateAsync(CustomersDTO customer)
+        public async Task<Response<bool>> UpdateAsync(CustomersDTO customerDto)
         {
-            throw new System.NotImplementedException();
+            var response = new Response<bool>();
+            try
+            {
+                var customer = _mapper.Map<Customers>(customerDto);
+                response.Data = await _customerDomain.UpdateAsync(customer);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Actualización Exitosa.";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
+
+            return response;
         }
 
 
-        public Task<Response<bool>> DeleteAsync(string customerId)
+        public async Task<Response<bool>> DeleteAsync(string customerId)
         {
-            throw new System.NotImplementedException();
+            var response = new Response<bool>();
+            try
+            {
+                response.Data = await _customerDomain.DeleteAsync(customerId);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Borrado Exitoso.";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
+
+            return response;
         }
 
 
-        public Task<Response<CustomersDTO>> GetAsync(string customerId)
+        public async Task<Response<CustomersDTO>> GetAsync(string customerId)
         {
-            throw new System.NotImplementedException();
+            var response = new Response<CustomersDTO>();
+            try
+            {
+                var customer = await _customerDomain.GetAsync(customerId);
+                response.Data = _mapper.Map<CustomersDTO>(customer);
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa.";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
+
+            return response;
         }
 
-        public Task<Response<IEnumerable<CustomersDTO>>> GetAllAsync()
+        public async Task<Response<IEnumerable<CustomersDTO>>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
+            var response = new Response<IEnumerable<CustomersDTO>>();
+            try
+            {
+                var customers = await _customerDomain.GetAllAsync();
+                response.Data = _mapper.Map<IEnumerable<CustomersDTO>>(customers);
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa.";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
+
+            return response;
         } 
 
         #endregion
