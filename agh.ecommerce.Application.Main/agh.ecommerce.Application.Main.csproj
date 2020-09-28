@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\agh.ecommerce.Application.DTO\agh.ecommerce.Application.DTO.csproj" />
+    <ProjectReference Include="..\agh.ecommerce.Application.Interface\agh.ecommerce.Application.Interface.csproj" />
+    <ProjectReference Include="..\agh.ecommerce.Domain.Entity\agh.ecommerce.Domain.Entity.csproj" />
+    <ProjectReference Include="..\agh.ecommerce.Domain.Interface\agh.ecommerce.Domain.Interface.csproj" />
+    <ProjectReference Include="..\agh.ecommerce.util.common\agh.ecommerce.Util.Common.csproj" />
+  </ItemGroup>
+
+</Project>

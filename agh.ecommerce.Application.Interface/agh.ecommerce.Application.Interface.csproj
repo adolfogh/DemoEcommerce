@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\agh.ecommerce.Application.DTO\agh.ecommerce.Application.DTO.csproj" />
+    <ProjectReference Include="..\agh.ecommerce.util.common\agh.ecommerce.Util.Common.csproj" />
+  </ItemGroup>
+
+</Project>
